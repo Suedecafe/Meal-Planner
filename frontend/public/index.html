@@ -4,13 +4,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CISC Project</title>
+  <title>My Meal Planner</title>
   <link rel="stylesheet" href="/frontend/public/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 
 <body>
-  <h1>Meal Planner Template</h1>
-  <script src="scripts.js"></script>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <hr class="line-divider">
+  
+  <div class="create-button" onclick="navigateTest()">
+    <i class="fas fa-plus icon"></i>
+</div>
+<div class="view-button" onclick="navigateTest()">
+  <i class="fas fa-eye"></i>
+
+</div>
+
+  <script src="/Backend/scripts.js"></script>
+  
 </body>
 
 </html>
