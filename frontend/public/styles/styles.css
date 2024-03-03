@@ -1,21 +1,13 @@
-.Welcome {
-  color: rgb(221, 147, 9);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 100px;
-  margin-left: 550px;
-}
-
 .line-divider {
   display: block;
   border-bottom: 1px solid black;
 }
-
 .create-button, .view-button {
   width: 150px;
   height: 150px;
   margin-top: 300px;
   margin-left:450px;
-  background-color: orange;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -38,7 +30,7 @@
 }
 
 .navbar {
-  background-color: orange; 
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
   font-family:fantasy;
   padding-right: 15px;
   padding-left: 15px; 
@@ -79,12 +71,29 @@ nav a:hover {
   margin: 200px auto 0;
   border-radius: 3px;
   border-style: solid;
-  background-color:rgb(244, 249, 249);
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+.signup-container{
+  width: 600px;
+  height: 560px;
+  margin: 100px auto 0;
+  border-radius: 3px;
+  border-style: solid;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 h1{
   text-align: center;
   padding-top: 15px;
   font-family:fantasy;
+}
+h2{
+  text-align: center;
+  padding-top: 15px;
+  font-family:fantasy;
+  color: linear-gradient(to right, #ff7e5f, #feb47b);
 }
 .login-page-body{
   background-color: rgb(245, 252, 252);
@@ -104,13 +113,31 @@ form input{
   border: 1px solid gray;
   border-radius: 5px;
   outline: none;
+  background:transparent
 }
+input[type="firstname"]{
+  margin-bottom:12px;
+}
+input[type="lastname"]{
+  margin-bottom:12px;
+}
+input[type="email"]{
+  margin-bottom:12px;
+}
+input[type="username"]{
+  margin-bottom:12px;
+}
+.password-signup{
+  margin-bottom: 12px;
+}
+
 input[type="button"]{
-  width: 320px;
+  width: 315px;
   height: 35px;
   margin-top: 20px;
-  border: none;
-  background-color: orange;
+  border-style: solid;
+  border-radius: 5px;
+  background: transparent;
   font-family: fantasy;
 }
 input[type="button"]:hover{
@@ -121,3 +148,9 @@ input[type="button"]:hover{
 .para-prompt{
 text-align: center;
 }
+.para-prompt2{
+  text-align: center;
+  }
+  body{
+    background:linear-gradient(to right, #ff7e5f, #feb47b);
+  }
