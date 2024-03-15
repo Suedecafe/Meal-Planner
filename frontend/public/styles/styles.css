@@ -1,7 +1,9 @@
+/* adds a black, solid line across header of page */
 .line-divider {
   display: block;
   border-bottom: 1px solid black;
 }
+/* changes size, color, format, border, and alignment of logos in create and view buttons, with transistion shadow on dashboard page*/
 .create-button, .view-button {
   width: 150px;
   height: 150px;
@@ -20,6 +22,7 @@
   transition: box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+/* on hover adds box shadow effect on create and view button in dashboard page */
 .create-button:hover, .view-button:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
 }
@@ -28,18 +31,20 @@
   font-size: 24px;
    
 }
-
+/* changes background color, inner space, font style of navbar content */
 .navbar {
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   font-family:fantasy;
   padding-right: 15px;
   padding-left: 15px; 
 }
+/* Div container for navbar, aligns everything center with space between*/
 .navdiv{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+/* Changes font size, color, and boldness of PrepSavior logo */
 .navlogo a{
   font-size: 35px; 
   font-weight: 600;
@@ -65,6 +70,7 @@ nav a:hover {
 .sign-up-link:hover{
   color: rgb(4, 202, 241);
 }
+/* Div container for login page */
 .login-container{
   width: 360px;
   height: 370px;
@@ -73,6 +79,7 @@ nav a:hover {
   border-style: solid;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
 }
+/* Div container for sign up page */
 .signup-container{
   width: 600px;
   height: 560px;
@@ -84,28 +91,48 @@ nav a:hover {
   align-items: center;
   justify-content: center;
 }
+/* formats div and its contents for create meal form*/
+.createmeal-container {
+  display: grid;
+  
+  border-style: solid;
+  width: auto;
+  height: auto; 
+  align-items: center;
+  justify-content: center;
+}
+/* formats create meal forms input and textarea fields*/
+.createmeal-container input,
+.createmeal-container textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+/* formats text to center for main header, changes font style, and add inner space from the top*/
 h1{
   text-align: center;
   padding-top: 15px;
   font-family:fantasy;
 }
+/* formats text to center for second header, changes font style, adds inner space from the top, and makes color a linear gradient*/
 h2{
   text-align: center;
   padding-top: 15px;
   font-family:fantasy;
   color: linear-gradient(to right, #ff7e5f, #feb47b);
 }
-.login-page-body{
-  background-color: rgb(245, 252, 252);
-}
+
 form{
   width: 300px;
   margin-left: 20px;
 }
+/* formats label to center and adds outer space from the top*/
 form label{
   display: flex;
   margin-top: 20px;
 }
+/* formats form input box shape, makes background transparent*/
 form input{
   width: 100%;
   padding: 7px;
@@ -115,6 +142,7 @@ form input{
   outline: none;
   background:transparent
 }
+/*for all of these input boxes it adds some space between them vertically so that they aren't touching*/
 input[type="firstname"]{
   margin-bottom:12px;
 }
@@ -127,10 +155,24 @@ input[type="email"]{
 input[type="username"]{
   margin-bottom:12px;
 }
+/* textarea box for ingredients with background linear gradient, and some inner and outer spacing for the sizing*/
+#ingredients{
+  margin-bottom:12px;
+  padding-top: 100;
+   padding-left: 0;
+   padding-bottom: 180px;
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+/* background color for input slider*/
+#caloriesRange{
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color:#feb47b;
+}
+
 .password-signup{
   margin-bottom: 12px;
 }
-
+/* formats size of buttons for login, sign up, add meal plan, changes their color, font style, background color*/
 input[type="button"]{
   width: 315px;
   height: 35px;
@@ -140,17 +182,31 @@ input[type="button"]{
   background: transparent;
   font-family: fantasy;
 }
+/* on mouse hover changes*/
 input[type="button"]:hover{
   cursor:pointer;
   color: white;
   background-color: black;
 }
+/*center align text of first paragraph prompt */
 .para-prompt{
 text-align: center;
 }
 .para-prompt2{
   text-align: center;
   }
+  /* entire body of all pages have background color of this linear gradient*/
   body{
-    background:linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+  }
+  /* mission statement from about page, changes its font style, size*/
+  .about-prompt{
+    font-size: 20px;
+    margin-bottom: 250px;
+    font-family: fantasy;
+  }
+  /* meal type dropdown selector, changes background color and adds outer spacing from the bottom*/
+  Select{
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    margin-bottom: 12px;
   }
