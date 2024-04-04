@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Meal Planner</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  
+</head>
+
+<body class="signup-page-body">
+  <nav class="navbar">
+    <div class="navdiv">
+        <div class="navlogo"><a href="#">PrepSavior</a></div>
+      <ul>
+        
+        <li><a href="/about">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    
+  </nav>
+  
+  <hr class="line-divider">
+
+  <div class="signup-container">
+    <h1>Prep Savior</h1>
+    <h2>Create an Account</h2>
+    <form action="/signUp" method="POST">
+        
+        <input type="firstname" name="first_name" placeholder="First Name">
+        <input type="lastname" name="last_name" placeholder="Last Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="username" name="user_name" placeholder="Username">
+        <input type="password" name="password" placeholder="Password" class="password-signup">
+        <input type="submit" id="signUpButton" value="Sign Up">
+        <p class="para-prompt2">Already have an account? <a href="/login" class="sign-up-link">Login Here</a></p>
+    </form>
+  </div>
+  
+  
+  
+  
+  
+</body>
+
+</html>

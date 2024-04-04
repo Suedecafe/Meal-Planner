@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Meal Planner</title>
-  <link rel="stylesheet" href="/frontend/public/styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
   
 </head>
 
@@ -14,8 +14,8 @@
     <div class="navdiv">
         <div class="navlogo"><a href="#">PrepSavior</a></div>
       <ul>
-        <li><a href="LoginPage.html">Home</a></li>
-        <li><a href="About.html">About</a></li>
+        
+        <li><a href="/about">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
@@ -26,13 +26,13 @@
 
   <div class="login-container">
     <h1>Prep Savior</h1>
-    <form>
+    <form action="/login" method="POST">
        
-        <input type="username" placeholder="Username">
+        <input type="username" name="user_name" placeholder="Username">
         
-        <input type="password" placeholder="Password">
-        <input type="button" value="Login">
-        <p class="para-prompt">Don't have an account? <a href="SignUpPage.html" class="sign-up-link">Sign Up Here</a></p>
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" id="signUpButton" value="Login">
+        <p class="para-prompt">Don't have an account? <a href="/signUp" class="sign-up-link">Sign Up Here</a></p>
     </form>
   </div>
   

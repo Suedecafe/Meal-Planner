@@ -1,7 +1,8 @@
 //Function that links to CreateMealPage.html
 function navigateToCreate() {
     
-    window.location.href = 'CreateMealPage.html';
+    window.location.href = '/createmealpage';
+    console.log('is working');
 }
 // Retrieves a reference to the input element with id caloriesRange
 const caloriesRange = document.getElementById("caloriesRange");

@@ -173,7 +173,7 @@ input[type="username"]{
   margin-bottom: 12px;
 }
 /* formats size of buttons for login, sign up, add meal plan, changes their color, font style, background color*/
-input[type="button"]{
+#signUpButton{
   width: 315px;
   height: 35px;
   margin-top: 20px;
@@ -183,7 +183,7 @@ input[type="button"]{
   font-family: fantasy;
 }
 /* on mouse hover changes*/
-input[type="button"]:hover{
+#signUpButton:hover{
   cursor:pointer;
   color: white;
   background-color: black;

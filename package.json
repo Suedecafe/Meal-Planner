@@ -4,7 +4,8 @@
   "description": "CISC-4900 Project\r # Description\r Website that will allow users to finally be able to create and save all the meal plan ideas that pops up in their heads and be able to utilize them at any time.\r # Features\r Sign up/Login for user authentication, Create a new meal plan, add ingredients, notes, etc. Save Meal Plans to their accounts for future use, Edit their Meal Plans at any time, and View them.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm start"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
     "mysql": "^2.18.1",
     "nodemon": "^3.1.0"
   }

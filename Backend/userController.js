@@ -4,6 +4,7 @@ const db = require("./dbConnection");
 const app = require('./app');
 const mysql = require("mysql")
 
+
 // Defines an asynchronous function called signUp, which takes two parameters: req (request) and res (response).
 async function signUp(req, res) {
     // Extracts user info from the request body (such as their username, password, email, first name, and last name).
@@ -32,7 +33,7 @@ async function signUp(req, res) {
             if (err) throw (err)
 
             // Print the number of search results (should be either 0 or 1).
-            console.log("------> Search Results")
+            console.log("Search Results")
             console.log(result.length)
 
             // If the search result is not empty, it means the username already exists.
@@ -40,7 +41,7 @@ async function signUp(req, res) {
                 // Release the database connection.
                 connection.release()
                 // Log a message indicating that the username already exists.
-                console.log("------> Username already exists")
+                console.log("Username already exists")
                 // Sends a status code of 409 (Conflict) to indicate that the user can't be created.
                 res.sendStatus(409) 
             } 
@@ -53,16 +54,68 @@ async function signUp(req, res) {
                     // If an error occurs during the insert query, throws an error.
                     if (err) throw (err)
                     // Logs a message indicating that a new user has been created.
-                    console.log ("--------> New User Created")
+                    console.log (" New User Created")
                     // Prints the ID of the newly inserted user.
                     console.log(result.insertId)
-                    // Sends a status code of 201 (Created) to indicate that the user has been successfully created.
-                    res.sendStatus(201)
+            
+                    res.redirect('/login');
+                    
                 })
             }
         }) //end of connection.query()
     }) //end of db.getConnection()
 } //end of signUp function
 
+// An asynchronous function called login, which takes two parameters: req (request) and res (response).
+async function login(req, res) {
+    // Extracting the username and password from the request body.
+    const user_name = req.body.user_name;
+    const password = req.body.password;
+
+    // Establishing a database connection.
+    db.getConnection(async (err, connection) => {
+        // If an error occurs while establishing the connection, throw an error.
+        if (err) throw (err);
+
+        // Create an SQL query to search for a user with the specified username.
+        const sqlSearch = "SELECT * FROM user_table WHERE user_name = ?";
+        // Format the SQL query with the username.
+        const search_query = mysql.format(sqlSearch, [user_name]);
+
+        // Executes search query to find user with the specified username.
+        await connection.query(search_query, async (err, result) => {
+            // Releases the database connection.
+            connection.release();
+
+            // If an error occurs during the query execution, throw an error.
+            if (err) throw (err);
+
+            // If no user with the specified username is found, sends a 404 status code.
+            if (result.length == 0) {
+                console.log(" User not found");
+                res.sendStatus(404);
+            }
+            // if a user with the specified username is found, proceed with password verification.
+            else {
+                // Retrieves hashed password from the database query result.
+                const hashedPassword = result[0].password;
+                // Compares the provided password with the hashed password retrieved from the database.
+                if (await bcrypt.compare(password, hashedPassword)) {
+                    // If the passwords match, sends a success message to show successful login.
+                    console.log("Login Successful");
+                    res.redirect('/dashboard');
+                } 
+                // If the passwords do not match, sends a message showing incorrect password.
+                else {
+                    console.log(" Password Incorrect");
+                    res.send("Password incorrect!");
+                } //end of bcrypt.compare()
+            }//end of User exists i.e. results.length==0
+        }); //end of connection.query()
+    }); //end of db.getConnection()
+} //end of login function
+
+
+
 // Export the signUp function to make it accessible from other modules.
-module.exports = signUp;
+module.exports = { signUp, login };
