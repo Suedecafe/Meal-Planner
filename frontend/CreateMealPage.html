@@ -28,27 +28,27 @@
   <div class="createmeal-container">
     <h1>Create a Meal Plan</h1>
     
-    <form>
+    <form action="/addMeal" method="POST">
         
-        <input type="mealname" placeholder="Meal Plan Name">
+        <input type="text" name="mealName" placeholder="Meal Plan Name">
         <label for="Meal Type">Choose a Meal Type:</label>
-        <select id="Meal-slt" name="slt-Meal">
+        <select id="Meal-slt" name="mealType">
           <option value="Breakfast">Breakfast</option>
           <option value="Lunch">Lunch</option>
           <option value="Dinner">Dinner</option>
           <option value="Snack">Snack</option>
         </select>
-        <textarea id="ingredients" rows= "4" cols="40" placeholder="Enter Ingredients"></textarea>
+        <textarea id="ingredients" name="ingredients" rows= "4" cols="40" placeholder="Enter Ingredients"></textarea>
         <input type="range" id="caloriesRange" name="caloriesRange" min="0" max="10000" value="2000">
         <p id="caloriesValue">2000 calories</p>
         
         <input type="submit" id="signUpButton" value="Add Meal Plan">
     </form>
   </div>
+ 
+
   
-  
-  
-  <script src="/Backend/scripts.js"></script>
+  <script src="/scripts"></script>
   
 </body>
 

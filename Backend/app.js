@@ -6,6 +6,7 @@ const session = require("express-session");
 const app = express();
 // Imports the signUp and login functions from the userController module.
 const { signUp, login } = require("./userController");
+const mealController = require("./mealController");
 // Imports the 'path' module, which provides utilities for dealing with file and directory paths.
 const path = require('path');
 // Imports the 'body-parser' module; middleware for parsing request bodies in middleware functions.
@@ -74,12 +75,14 @@ app.get("/logout", (req, res) => {
 
 
 
+
 // Defines a POST route at "/signUp" endpoint, which will call the async signUp function from userController.
 app.post("/signUp", signUp);
 
 // Define a POST route at"/login" endpoint, which will call the async login function from userController.
 app.post("/login", login);
-
+// Define a POST route at"/addMeal" endpoint, which will call the async addMeal function from mealController.
+app.post("/addMeal", mealController.addMeal);
 
 
 // Listens for incoming requests on port 3000 and logs a message when the server starts.

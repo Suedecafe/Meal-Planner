@@ -57,6 +57,8 @@ async function signUp(req, res) {
                     console.log (" New User Created")
                     // Prints the ID of the newly inserted user.
                     console.log(result.insertId)
+                    // Set the userId in the session
+                    req.session.user_id = result.insertId;
             
                     res.redirect('/login');
                     
@@ -84,6 +86,7 @@ async function login(req, res) {
 
         // Executes search query to find user with the specified username.
         await connection.query(search_query, async (err, result) => {
+   
             // Releases the database connection.
             connection.release();
 
@@ -101,6 +104,13 @@ async function login(req, res) {
                 const hashedPassword = result[0].password;
                 // Compares the provided password with the hashed password retrieved from the database.
                 if (await bcrypt.compare(password, hashedPassword)) {
+                    const user = result[0]; // Extracts the user data from the result
+                    const userId = user.user_id; // Extracts user ID from the user data
+                    console.log("Retrieved User ID:", userId); // Logs the retrieved user ID
+
+                    // Set the user ID in the session
+                    req.session.user_id = userId;
+                    console.log("Session User ID:", req.session.user_id); // Logs the user ID in the session to verify
                     // If the passwords match, sends a success message to show successful login.
                     console.log("Login Successful");
                     res.redirect('/dashboard');
