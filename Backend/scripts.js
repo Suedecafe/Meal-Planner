@@ -4,6 +4,12 @@ function navigateToCreate() {
     window.location.href = '/createmealpage';
     console.log('is working');
 }
+//Function that links to CreateMealPage.html
+function navigateToView() {
+    
+  window.location.href = '/ViewMeals';
+  console.log('is working');
+}
 document.addEventListener("DOMContentLoaded", function() {
   // Retrieves a reference to the input element with id caloriesRange
   const caloriesRange = document.getElementById("caloriesRange");
