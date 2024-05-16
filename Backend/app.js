@@ -5,16 +5,16 @@ const session = require("express-session");
 // Creates an Express application instance.
 const app = express();
 // Imports the signUp and login functions from the userController module.
-const { signUp, login } = require("./userController");
-const mealController = require("./mealController");
+const { signUp, login } = require("./Backend/userController");
+const mealController = require("./Backend/mealController");
 // Imports the 'path' module, which provides utilities for dealing with file and directory paths.
 const path = require('path');
 // Imports the 'body-parser' module; middleware for parsing request bodies in middleware functions.
 const bodyParser = require('body-parser');
 
-const db = require("./dbConnection");
+const db = require("./Backend/dbConnection");
 
-const { getMealsByUserId } = require('./mealController');
+const { getMealsByUserId } = require('./Backend/mealController');
 
 // Middleware to parse JSON bodies
 app.use(express.json()); 
@@ -32,35 +32,35 @@ app.use(session({
 }));
 // Serve the SignUpPage.html using __dirname
 app.get("/signUp", (req, res) => {
-  res.sendFile(path.join(__dirname, "../SignUpPage.html"));
+  res.sendFile(path.join(__dirname, "../frontend/SignUpPage.html"));
 });
 // Serves the styles.css using --dirname
 app.get("/styles.css", (req, res) => {
-  res.sendFile(path.join(__dirname, "../styles.css"));
+  res.sendFile(path.join(__dirname, "../frontend/styles.css"));
 });
 // Serves the index.html using __dirname
 app.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "../index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
 // Serves the About.html using __dirname
 app.get("/about", (req, res) => {
-  res.sendFile(path.join(__dirname, "../About.html"));
+  res.sendFile(path.join(__dirname, "../frontend/About.html"));
 });
 // Serves the Contact.html using __dirname
 app.get("/contact", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Contact.html"));
+  res.sendFile(path.join(__dirname, "../frontend/Contact.html"));
 });
 // Serves the CreateMealPage.html using __dirname
 app.get("/createmealpage", (req, res) => {
-  res.sendFile(path.join(__dirname, "../CreateMealPage.html"));
+  res.sendFile(path.join(__dirname, "../frontend/CreateMealPage.html"));
 });
 app.get("/scripts", (req, res) => {
   res.sendFile(path.join(__dirname, "../scripts.js"));
 });
 // Serves the index.html using __dirname
 app.get("/dashboard", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Dashboard.html"));
+  res.sendFile(path.join(__dirname, "../frontend/Dashboard.html"));
 });
 // Serves the logout route 
 app.get("/logout", (req, res) => {
@@ -79,13 +79,13 @@ app.get("/logout", (req, res) => {
 
 // Serves the findPlaces.html using __dirname
 app.get("/findplaces", (req, res) => {
-  res.sendFile(path.join(__dirname, "../findPlaces.html"));
+  res.sendFile(path.join(__dirname, "../frontend/findPlaces.html"));
 });
 
   
     // Send the ViewMeals.html file along with the fetched data
     app.get("/ViewMeals", async (req, res) => {
-      res.sendFile(path.join(__dirname, "../ViewMeals.html"));
+      res.sendFile(path.join(__dirname, "../frontend/ViewMeals.html"));
     });
     // Define route handler for fetching meals data
     app.get("/meals", async (req, res) => {
