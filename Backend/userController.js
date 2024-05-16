@@ -1,7 +1,7 @@
 // Imports required modules for hashing passwords, connecting & interacting with the database, and accessing the application.
 const bcrypt = require("bcrypt");
 const db = require("./dbConnection");
-const app = require('../app');
+const app = require('./app');
 const mysql = require("mysql")
 
 

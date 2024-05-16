@@ -210,3 +210,55 @@ text-align: center;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     margin-bottom: 12px;
   }
+  
+
+  #meal-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Create a grid with columns that are at least 250px wide */
+    grid-gap: 60px;
+  }
+  
+/* Style for the meal items */
+.meal-item {
+  width: calc(33.33% - 20px); /* Adjust based on the desired width and margin */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: flex-start;
+  border: 2px solid #ccc; /* Border color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the box */
+  text-align: left; /* Align text to the left */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  
+}
+/* Text styles */
+.meal-item p {
+  font-family: fantasy; /* Custom font family */
+  font-size: 16px; /* Font size */
+  color: #333; /* Text color */
+  margin-bottom: 8px; /* Bottom margin for each text */
+}
+
+.delete-btn {
+  color: white;
+  background-color: black;
+  padding: 8px 16px; /* Padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius */
+  cursor: pointer; /* Add cursor pointer */
+  margin-top: 40px;
+  margin-bottom: 8px; /* Add margin between buttons */
+}
+
+/* Adjust dimensions of the meal item */
+.meal-item {
+  width: 250px; /* Set a fixed width */
+  height: 250px; /* Set a fixed height */
+}
+.meal-item button{
+  width: 100%;
+}
+.delete-btn:hover{
+  color: white;
+  background-color: rgb(223, 3, 3);
+}

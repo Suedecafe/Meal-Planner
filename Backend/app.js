@@ -40,7 +40,7 @@
  });
  // Serves the LoginPage.html using __dirname
  app.get("/login", (req, res) => {
-   res.sendFile(path.join(__dirname, "../frontend/LoginPage.html"));
+   res.sendFile(path.join(__dirname, "../frontend/index.html"));
  });
  
  // Serves the About.html using __dirname
