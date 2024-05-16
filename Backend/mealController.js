@@ -1,5 +1,5 @@
 const db = require("./dbConnection");
-const app = require('../app');
+const app = require('./app');
 const mysql = require("mysql")
 
 
@@ -38,10 +38,48 @@ async function addMeal(req, res) {
                 res.status(500).send("Error adding meal");
             } else {
                 console.log("New meal added successfully");
-                res.redirect("/dashboard"); // Redirect to view page
+                
+                res.redirect("/ViewMeals"); // Redirect to view page
             }
         });
     });
 }
+// Function to fetch meals by user ID from the database
+async function getMealsByUserId(userId) {
+    // Log the userId parameter to verify it's being passed correctly
+    console.log('User ID:', userId);
 
-module.exports = { addMeal };
+
+    try {
+        // Construct SQL query to select meals by user ID
+        const sqlQuery = "SELECT meal_id, meal_name, meal_type, ingredients, calories FROM meal_table WHERE user_id = ?";
+        
+        // Execute SQL query with user ID parameter
+        const result = await new Promise((resolve, reject) => {
+            db.query(sqlQuery, [userId], (err, result) => {
+                if (err) {
+                    reject(err); // Reject promise if there's an error
+                } else {
+                    resolve(result); // Resolve promise with query result
+                }
+            });
+        });
+
+        // Log the query result to inspect its structure
+        console.log('Query Result:', result);
+        
+        // Extract meals from the result object
+        const meals = result || [];
+
+        // Log the extracted meals to verify their content
+        console.log('Extracted Meals:', meals);
+        
+        // Return meals
+        return meals;
+    } catch (error) {
+        // Handle any errors (e.g., database connection error)
+        console.error("Error fetching meals by user ID:", error);
+        throw error; // Propagate the error to the caller
+    }
+}
+module.exports = { addMeal,getMealsByUserId };
