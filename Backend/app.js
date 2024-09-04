@@ -158,9 +158,9 @@
    res.json({ isAuthenticated });
  });
  
- // Listens for incoming requests on port 3000 and logs a message when the server starts.
- app.listen(3000, () => {
-    console.log("Server is running on port 3000");
- });
+ const PORT = process.env.PORT || 3000; // Default to 3000 for local testing
+ app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
  // Exports the Express application instance for testing purposes or make it accessible from other modules.
  module.exports = app;

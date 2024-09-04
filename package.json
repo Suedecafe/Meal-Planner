@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm start"
+    "start": "node Backend/app.js"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +15,10 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
+    "latest-version": "^9.0.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.11.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "npm": "^10.8.3"
   }
 }
