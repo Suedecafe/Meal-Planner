@@ -26,4 +26,4 @@ db.getConnection((err, connection) => {
 })
 
 // Exports the MySQL connection pool to make it accessible from other modules.
-module.exports = db;
+module.exports = db; 
